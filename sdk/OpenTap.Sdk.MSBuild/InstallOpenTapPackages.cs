@@ -116,7 +116,7 @@ namespace Keysight.OpenTap.Sdk.MSBuild
             if (PackagesToInstall == null || PackagesToInstall.Length == 0) 
                 return true; 
 
-            using (OpenTapContext.Create(OpenTapRuntimeDir))
+            using (OpenTapContext.Create(TapDir, OpenTapRuntimeDir))
                 return InstallPackages();
         }
 
