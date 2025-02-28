@@ -84,9 +84,6 @@ namespace Keysight.OpenTap.Sdk.MSBuild
         /// <returns></returns>
         public bool InstallImage(ITaskItem[] packagesToInstall, List<string> repositories)
         {
-            PluginManager.DirectoriesToSearch.Clear();
-            PluginManager.DirectoriesToSearch.Add(RuntimeDir);
-            PluginManager.Search();
             bool success = true;
 
             try
