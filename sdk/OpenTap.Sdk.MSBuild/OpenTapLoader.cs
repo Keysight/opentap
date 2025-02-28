@@ -57,11 +57,11 @@ namespace Keysight.OpenTap.Sdk.MSBuild
         /// the default resolver. Also, the resolver will look for the debug version (9.4.0.0) because that's what this
         /// assembly was compiled against. This is sort of a hack, but it should be fine.
         /// </summary>
-        /// <param name="tapDir"></param>
-        public static IDisposable Create(string tapDir)
+        /// <param name="runtimeDir"></param>
+        public static IDisposable Create(string runtimeDir)
         {
-            loadOpenTap(tapDir);
-            return new OpenTapContext(tapDir);
+            loadOpenTap(runtimeDir);
+            return new OpenTapContext(runtimeDir);
         }
         
         /// <summary>
