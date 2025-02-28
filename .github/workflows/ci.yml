@@ -754,11 +754,13 @@ jobs:
           New-Item -Force ./nuget/build/payload -ItemType Directory | Out-Null
 
 
-          Move-Item ./bin/Release/Keysight.OpenTap.Sdk.MSBuild.dll ./nuget/build
-          Move-Item ./bin/Release/DotNet.Glob.NetStandard1.1.dll ./nuget/build/DotNet.Glob.dll
+          Copy-Item ./bin/Release/Keysight.OpenTap.Sdk.MSBuild.dll ./nuget/build
+          Copy-Item ./bin/Release/DotNet.Glob.NetStandard1.1.dll ./nuget/build/DotNet.Glob.dll
 
-          Move-Item ./bin/Release/OpenTap.Package.xml ./nuget/build/payload
-          Move-Item ./bin/Release/OpenTap.xml ./nuget/build/payload
+          Copy-Item ./bin/Release/OpenTap.Package.xml ./nuget/build/payload
+          Copy-Item ./bin/Release/OpenTap.xml ./nuget/build/payload
+          Copy-Item ./bin/Release/OpenTap.Package.dll ./nuget/build/payload
+          Copy-Item ./bin/Release/OpenTap.dll ./nuget/build/payload
 
           # Expand-Archive will only extract .zip extensions    
           echo "Rename Archives"
